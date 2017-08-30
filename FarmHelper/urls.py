@@ -22,8 +22,11 @@ from app import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^app/', include('app.urls')),
+    url(r'^farmerid/(?P<pk>[0-9]+)/$', views.FarmerDetail),
     url(r'^farmer/',views.FarmerList.as_view()),
+    url(r'^memberid/(?P<pk>[0-9]+)/$', views.MemberDetail),
     url(r'^member/',views.MemberList.as_view()),
+    url(r'^householdid/(?P<pk>[0-9]+)/$', views.HouseHoldDetail),
     url(r'^household/', views.HouseHoldList.as_view()),
 
 ]
