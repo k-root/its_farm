@@ -25,7 +25,7 @@ SECRET_KEY = '8oo6o5hqp1z39^dfyc81afi#%9o39ykem8)_7*4uax@igqwvu@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'FarmHelper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'group15',
+        'USER': 'group15',
+        'PASSWORD': '15',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

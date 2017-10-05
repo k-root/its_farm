@@ -18,7 +18,6 @@ from django.contrib import admin
 from rest_framework.urlpatterns import format_suffix_patterns
 from app import views
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^app/', include('app.urls')),
@@ -28,7 +27,12 @@ urlpatterns = [
     url(r'^member/',views.MemberList.as_view()),
     url(r'^householdid/(?P<pk>[0-9]+)/$', views.HouseHoldDetail),
     url(r'^household/', views.HouseHoldList.as_view()),
-
+    url(r'^maps/', views.maps),
+    url(r'^maplist/', views.MapList.as_view()),
+    url(r'^maplistid/(?P<pk>[0-9]+)/$', views.MapDetail),
+    url(r'^farms/',views.FarmList.as_view()),
+#    url(r'^farmdet/',views.News.as_view()),
+    url(r'^wells/', views.Wells.as_view()),
 ]
 
 urlpatterns=format_suffix_patterns(urlpatterns)
